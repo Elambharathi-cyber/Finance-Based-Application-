@@ -116,11 +116,11 @@ def loanform():
         import smtplib
         s = smtplib.SMTP('smtp.gmail.com', 587)
         s.starttls()
-        s.login("cccetsfinance@gmail.com", "financelogin")
+        s.login("<Your company gmail id goes here>", "<Your company gmail password goes here>")
         SUBJECT = 'Loan Approved'
         TEXT = 'Hi '+(name+','+'\n'+'\n')+('Your Loan application is successfully submited !'+'\n'+'\n')+('Loan Amount is: '+(str(amount)+'\n'))+('Monthly Interest is: '+(str(value1)+'\n'))+('Loan Durations is: '+(loanfinal+'\n'))+('Loan Type is: '+(loantype+'\n'+'\n'))+'Warmest Regards'+'\n'+'ETS Finance'           
         message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
-        s.sendmail("cccetsfinance@gmail.com",email, message)
+        s.sendmail("<Your company gmail id goes here>",email, message)
         s.quit()
         messagebox.showinfo("Successful",'Application Submited')
         
@@ -431,11 +431,11 @@ def loanstatus():
             import smtplib
             s = smtplib.SMTP('smtp.gmail.com', 587)
             s.starttls()
-            s.login("cccetsfinance@gmail.com", "financelogin")
+            s.login("<Your company gmail id goes here>", "<Your company passowrd goes here>")
             SUBJECT = 'OTP'
             TEXT = 'Your One Time Password is:'+str(otpval)
             message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
-            s.sendmail("cccetsfinance@gmail.com","goodboybharathi@gmail.com", message)
+            s.sendmail("<Your company gmail id goes here>","<Company administrator's gmail id goes here>", message)
             s.quit()
         else:
             messagebox.showerror("Error",'Enter the proper details')
